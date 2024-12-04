@@ -26,7 +26,7 @@ The POL signal controls the direction of the transmitter current flow. A high PO
 Output Signal Example 
 +++++++++++++++++++++
 
-.. figure:: img/50%_DC_example.png
+.. figure:: img/50_DC_example.png
 
     Generation of a 50% duty cycle output signal.
 

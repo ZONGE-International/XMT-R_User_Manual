@@ -9,7 +9,7 @@ The main page provides a quick view of essential information, including:
 - **Selected Mode**: Displays the current operational mode.
 - **Frequency**: Shows the frequency setting in use.
 
-.. image:: img/hardware/img---3.gif
+.. image:: img/hardware/img---3.png
    :alt: Main page overview
 
 The top section of the screen displays:
@@ -19,7 +19,7 @@ The top section of the screen displays:
 - **XMT ID**: Identifies the unique transmitter ID.
 - **Wi-Fi Status**: Shows if Wi-Fi is enabled or disabled.
 
-.. image:: img/hardware/img---4.gif
+.. image:: img/hardware/img---4.png
    :alt: XMT ID display
 
 Navigation and Buttons
@@ -40,7 +40,7 @@ To switch modes directly from the Main Page:
 1. Make sure you have MODE selected (using the NEXT button).
 2. Press and hold the UP or DOWN button for two seconds to change the mode. (This delay is for safety reasons to prevent accidental mode changes.)
 
-.. image:: img/hardware/img---7.gif
+.. image:: img/hardware/img---7.png
    :alt: Mode adjustment illustration
 
 Frequency Adjustment on Main Page
@@ -51,7 +51,7 @@ To adjust the frequency directly from the Main Page:
 1. Make sure you have FREQUENCY selected (using the NEXT button).
 2. Press the UP or DOWN button to increase or decrease the frequency setting.
 
-.. image:: img/hardware/img---10.gif
+.. image:: img/hardware/img---10.png
    :alt: Frequency adjustment
 
 Menu Options
@@ -75,8 +75,8 @@ In the MENU page:
 - **Screen Light Control**: Turn the screen light on or off.
 - **Wi-Fi Control**: Enable or disable Wi-Fi and view the device's IP address if Wi-Fi is active.
 
-.. image:: img/hardware/img---12.gif
+.. image:: img/hardware/img---12.png
    :alt: Menu options overview
 
-.. image:: img/hardware/img---14.gif
+.. image:: img/hardware/img---14.png
    :alt: Menu options overview
