@@ -1,0 +1,3 @@
+sphinx
+sphinx-rtd-theme  # Or your chosen theme
+myst-parser  # If you use Markdown with Sphinx
