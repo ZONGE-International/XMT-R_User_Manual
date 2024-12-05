@@ -1,0 +1,47 @@
+name: Deploy Sphinx Documentation
+
+permissions:
+  contents: write # This gives the GITHUB_TOKEN write access to the repository
+
+on:
+  push:
+    branches:
+      - main # Trigger on the 'master' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      # Step 3: Install Sphinx and dependencies
+      - name: Install Python dependencies
+        run: |
+          pip install sphinx
+          pip install sphinx-rtd-theme  # Or your preferred Sphinx theme
+          pip install -r requirements.txt  # If you have a requirements file
+
+      # Step 4: Build Sphinx documentation (HTML only)
+      - name: Build HTML documentation
+        run: sphinx-build -b html source/ source/_build/html # Update path to use 'docs' directory
+
+      # Step 5: Deploy built HTML files to the gh-pages branch
+      - name: Deploy to gh-pages branch
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git checkout -B gh-pages  # Create or switch to the 'gh-pages' branch
+          cp -r docs/_build/html/* .  # Copy built files to the root
+          touch .nojekyll  # Add .nojekyll file to prevent Jekyll processing
+          git add .
+          git commit -m "Deploy updated documentation"
+          git push origin gh-pages --force  # Push to the gh-pages branch
