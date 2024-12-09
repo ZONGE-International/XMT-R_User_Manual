@@ -13,9 +13,17 @@ release = '01'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+import sys
+extensions = []
+
+# Conditionally use 'mathjax' for HTML and 'imgmath' for PDF builds
+if 'html' in sys.argv:
+    extensions.append('sphinx.ext.mathjax')
+elif 'latex' in sys.argv:
+    extensions.append('sphinx.ext.imgmath')
 
 #extensions = ['sphinx.ext.imgmath']
-extensions = ['sphinx.ext.mathjax', 'sphinx.ext.imgmath']
+#extensions = ['sphinx.ext.mathjax', 'sphinx.ext.imgmath']
 
 templates_path = ['_templates']
 exclude_patterns = []
