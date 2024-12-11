@@ -44,3 +44,9 @@ html_theme_options = {
 'logo_only': True,
  'display_version': False,
 }
+html_context = {
+  'display_github': True,
+  'github_user': 'ZONGE-International',
+  'github_repo': 'XMT-R_User_Manual',
+  'github_version': 'main/source/',
+}
