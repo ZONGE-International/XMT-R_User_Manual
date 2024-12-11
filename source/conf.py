@@ -39,7 +39,7 @@ html_css_files = ["custom.css"]  # contains special formating used in the R&D do
 html_favicon = 'zonge.ico'
 html_logo = 'Zonge_logo_white_transparent.png'
 html_title = 'XMT-R User Manual'
-html_short_title = 'XMT-R2'
+html_short_title = 'XMT-R'
 html_theme_options = {
 'logo_only': True,
  'display_version': False,
