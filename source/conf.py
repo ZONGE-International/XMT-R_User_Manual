@@ -7,7 +7,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'XMT-R User Manual'
-html_title = 'XMT-R User Manual'
 copyright = '2024, ZONGE International'
 author = 'ZONGE International'
 release = '01'
@@ -39,6 +38,8 @@ html_static_path = ['_static']
 html_css_files = ["custom.css"]  # contains special formating used in the R&D documentation
 html_favicon = 'zonge.ico'
 html_logo = 'Zonge_logo_white_transparent.png'
+html_title = 'XMT-R User Manual'
+html_short_title = 'XMT-R2'
 html_theme_options = {
 'logo_only': True,
  'display_version': False,
