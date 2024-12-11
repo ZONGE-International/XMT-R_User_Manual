@@ -60,16 +60,19 @@ Menu Options
 In the MENU page:
 
 - **Mode Selection**: Choose between "Basic" and "Advanced" modes.
-  - Basic Mode offers two options:
+  
+  - **Basic Mode** offers two options:
 
     - **100% DC**: Allows frequency selection from 0.0078125 Hz up to 8192 Hz.
     - **50%**: Limits frequency selection to a range of 0.0078125 Hz up to 64 Hz.
 
-  - Advanced Mode includes additional options:
+  - **Advanced Mode** includes additional options:
+
     - **100% DC**: Frequency range from 0.0078125 Hz up to 8192 Hz.
     - **50%**: Frequency range from 0.0078125 Hz up to 64 Hz.
     - **Custom**: Allows frequency selection from 0.0078125 Hz up to 8192 Hz.
     - **MMR 5Hz**: Specialized mode for MMR applications, fixed at 5 Hz.
+
 - **GPS Information**: Displays the current GPS status and satellite data.
 - **Firmware Version**: Shows the firmware version installed.
 - **Screen Light Control**: Turn the screen light on or off.
