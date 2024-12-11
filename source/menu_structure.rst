@@ -11,6 +11,7 @@ The main page provides a quick view of essential information, including:
 
 .. image:: img/hardware/img---3.png
    :alt: Main page overview
+   :width: 50%
 
 The top section of the screen displays:
 
@@ -21,6 +22,7 @@ The top section of the screen displays:
 
 .. image:: img/hardware/img---4.png
    :alt: XMT ID display
+   :width: 50%
 
 Navigation and Buttons
 ++++++++++++++++++++++
@@ -42,6 +44,7 @@ To switch modes directly from the Main Page:
 
 .. image:: img/hardware/img---7.png
    :alt: Mode adjustment illustration
+   :width: 50%
 
 Frequency Adjustment on Main Page
 +++++++++++++++++++++++++++++++++
@@ -53,6 +56,7 @@ To adjust the frequency directly from the Main Page:
 
 .. image:: img/hardware/img---10.png
    :alt: Frequency adjustment
+   :width: 50%
 
 Menu Options
 ++++++++++++
@@ -80,6 +84,8 @@ In the MENU page:
 
 .. image:: img/hardware/img---12.png
    :alt: Menu options overview
+   :width: 50%
 
 .. image:: img/hardware/img---14.png
    :alt: Menu options overview
+   :width: 50%
