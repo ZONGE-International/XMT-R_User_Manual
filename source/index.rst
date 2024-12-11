@@ -15,7 +15,6 @@ XMT-R User Manual
    menu_structure.rst
    web_interface.rst
    user_generated_signals.rst
-   specifications.rst
 
 
 .. Indices and tables
