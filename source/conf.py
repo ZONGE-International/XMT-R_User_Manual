@@ -7,6 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'XMT-R User Manual'
+html_title = 'XMT-R User Manual'
 copyright = '2024, ZONGE International'
 author = 'ZONGE International'
 release = '01'
