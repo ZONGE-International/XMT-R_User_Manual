@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generate User Defined Sequences &mdash; XMT-R User Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=86ecffec" />
+
+  
+    <link rel="shortcut icon" href="_static/zonge.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=82a30901"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Using the WEB Interface" href="web_interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/Zonge_logo_white_transparent.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controls_connectors.html">XMT-R Controls and Connectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_structure.html">Basic Use and Menu Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_interface.html">Using the WEB Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generate User Defined Sequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#control-signals">Control Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-signal-example">Output Signal Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-the-signal-definition-file">Generating the Signal Definition File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-format">File Format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#uploading-a-usm-file-to-the-xmt-r">Uploading a .usm File to the XMT-R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transmitting-a-user-defined-sequence">Transmitting a User Defined Sequence</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">XMT-R User Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Generate User Defined Sequences</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ZONGE-International/XMT-R_User_Manual/blob/main/source/user_generated_signals.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="generate-user-defined-sequences">
+<h1>Generate User Defined Sequences<a class="headerlink" href="#generate-user-defined-sequences" title="Link to this heading"></a></h1>
+<p>In addition to the pre-programmed 50 % and 100 % duty-cycle control signals the XMT-R allows the user to generate their own user defined control signals. This allows the user to run the transmitter with user defined ternary signals.</p>
+<section id="control-signals">
+<h2>Control Signals<a class="headerlink" href="#control-signals" title="Link to this heading"></a></h2>
+<p>The transmitter signal of a ZONGE transmitter can have three states:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Positive ON</p></li>
+<li><p>OFF</p></li>
+<li><p>Negative ON</p></li>
+</ol>
+</div></blockquote>
+<p>Positive ON and Negative ON refers to the fow of current flow through the transmitter antenna in opposite directions. To define the output signal of a transmitter the transmitter controller uses two binary control signals:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>ON#</p></li>
+<li><p>POL</p></li>
+</ol>
+</div></blockquote>
+<p>Each of the two control signals can be either in a LOW or a HIGH state. The high state is associated with a control signal voltage of 3.3 V while the low state is associated with a control signal voltage of 0 V.</p>
+<p>The ON# signal defines whether the transmitter is putting out a current or not. The <strong># added to the ON#</strong> indicates that this control signal is <strong>active low</strong>, meaning that the transmitter transmits a current when this signal is in a low state. To switch the transmitter signal off the ON# signal must be set to a high state.</p>
+<p>The POL signal controls the direction of the transmitter current flow. A high POL signal (POL = 3.3 V) is associated with a positive current flow while a low POL signal (POL = 0 V) is associated with a negative signal flow.</p>
+</section>
+<section id="output-signal-example">
+<h2>Output Signal Example<a class="headerlink" href="#output-signal-example" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id1">
+<img alt="_images/50_DC_example.png" src="_images/50_DC_example.png" />
+<figcaption>
+<p><span class="caption-text">Generation of a 50% duty cycle output signal.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The above figure shows the generation of a 50% duty cycle transmitter signal as it is commonly used in time domain geophysical methods. The red graph on the top represents the ON# control signal. The green graph in the middle shows the POL control signal and the black graph on the bottom represents the resulting transmitter output signal.</p>
+<p>The example contains all three possible output states of the transmitter.</p>
+<p>In the time interval from 0 to 1 the ON# signal is HIGH. As the ON# signal is an active low signal the transmitter is turned off during this period. In the time interval from 1 to 2 the ON# signal is LOW and the transmitter is turned on. As the POL signal is HIGH during this time interval the transmitter output direction is positive. In the next time interval from 2 to 3 the ON# signal is HIGH again and the transmitter is turned off. In the time interval from 3 to 4 the ON# is LOW and the POL signal is low. This results in a negative output current direction of the transmitter signal. In the time interval from 4 to 7 the sequence of the time interval 0 to 4 is repeated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>None of the signals contain amplitude information. The control signals are represented as binary LOW = 0 and HIGH = 1 signals. The resulting transmitter output curve only represents the direction of the current flow (-1 =negative and +1 = positive). The amplitude of the output signal is set to a predefined value on the transmitter. Please refer to the transmitter documentation for further details.</p>
+</div>
+</section>
+<section id="generating-the-signal-definition-file">
+<h2>Generating the Signal Definition File<a class="headerlink" href="#generating-the-signal-definition-file" title="Link to this heading"></a></h2>
+<p>To use the transmitter with a user defined transmitter signal a signal definition file must be generated and uploaded to the XMT-R by the user. This file contains a sequence of control signal combinations. It uses the ending .usm for user mode. At every clock cycle of a base clock the XMT-R will read the next settings for the control signal pair from the .usm file. At the next clock cycle the output ON# and POL signals are set according to the settings read in the previous clock cycle. In addition the next pair of settings is read. When the XMT-R reaches the last entry in the .usm file it automatically loops back to the beginning of the file. This results in a periodic output signal of the transmitter.</p>
+<section id="file-format">
+<h3>File Format<a class="headerlink" href="#file-format" title="Link to this heading"></a></h3>
+<p>To save storage space on the microcontroller the .usm files are stored in binary form. The file format is simple. It contains of three parts:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Sequence length</p></li>
+<li><p>List of POL entries</p></li>
+<li><p>List of ON# entries</p></li>
+</ol>
+</div></blockquote>
+<p>The sequence length must be stored as 16 bit unsigned integer with big endian byte-order. This allows a maximum sequence length of <span class="math notranslate nohighlight">\(2^{16} = 65,536\)</span> entries.</p>
+<p>The lists of POL and ON# entries must be represented in binary form. Every eight consecutive bits are combined to a byte which is stored in the list. If the sequence length is not a multiple of 8 the last entry must be padded with zeros to generate a byte. The padding is only necessary to write the sequence as bytes. Based on the sequence length the XMT-R will ignore the padded bits.</p>
+<p>The following Python code is an example for the generation of .usm file for an 4th order <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_binary_sequence">Pseudo Random Binary Sequence (PRBS)</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos"> 2</span><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;int&#39;</span><span class="p">:</span><span class="nb">hex</span><span class="p">})</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">pol</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># sequency for polarity</span>
+<span class="linenos"> 5</span><span class="n">on_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>           <span class="c1"># sequence for ~on  ~on is active low!</span>
+<span class="linenos"> 6</span><span class="n">slen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span>                                 <span class="c1"># sequence lentgh</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># Pad the on and pol lists with 0 to have a lenght of a multiple of 8</span>
+<span class="linenos"> 9</span><span class="n">apol</span> <span class="o">=</span> <span class="mi">8</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span><span class="o">%</span><span class="mi">8</span>
+<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">apol</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="n">pol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">on_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="n">pol_bytes</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">packbits</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pol</span><span class="p">),</span><span class="n">bitorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">))</span>
+<span class="linenos">15</span><span class="n">on_bytes</span>  <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">packbits</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">on_</span><span class="p">),</span><span class="n">bitorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">))</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="n">pol_bytes</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="n">on_bytes</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sequence lenght = </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">slen</span><span class="p">,</span><span class="n">slen</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">)))</span>
+<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pol array = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pol</span><span class="p">))</span>
+<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ON_ array = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">on_</span><span class="p">))</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;PRBS_4.usm&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">binary_file</span><span class="p">:</span>
+<span class="linenos">25</span>    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">slen</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">))</span>
+<span class="linenos">26</span>    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pol_bytes</span><span class="p">)</span>
+<span class="linenos">27</span>    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">on_bytes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A PRBS only uses two states. In a geophysical transmitter these are current flow in the positive direction or current flow in the  negative direction. Consequently only the POL signal changes in the example. The ON# signal is always 0 (always on).</p>
+<p>In the example the sequence of states of the two control signals are explicitly stated as Python lists in lines 4 and 5. Both lists must have the same number of entries. This number of entries is used to populate the sequence length variable slen in line 6. The length of a PRBS is <span class="math notranslate nohighlight">\(2^N-1\)</span> where N is the PRBS order. In the case of a 4th order PRBS the sequence length is 15.</p>
+<p>As 15 is not a multiple of 8 the lists need to be padded with one 0 each. This could be done by simply adding a 0 entry to both lists, but then the slen variable would be wrong. Instead of padding the lists manually lines 9 - 12 are used to pad the lists automatically.</p>
+<p>After padding the lists both have 16 entries. These 16 entries are represented as 2 bytes of 8 bit each. To interpret the list entries as bits and convert them into bytes the lists are first converted to numpy arrays using the command <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html">numpy.array</a>. Then the numpy arrays are converted to bytes using the command <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.packbits.html">numpy.packbits</a>. This is done in lines 14 and 15 of the example code.</p>
+<p>Finally the binary file is written in lines 24 to 27. The slen variable is converted to a 2 byte number and written as first entry to the file. Then the two list entries for the POL and ON# signals are written. The rest of the code are a couple of print lines for the user.</p>
+<p>The generated file is 6 bytes long. The first 2 bytes define the 16 bit integer for the sequence length. The next two bytes contain the 15 bits of the POL list plus one bit for padding and the last two bytes contain the 15 bits of the ON list and one padding bit. The terminal output of the code is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mh">0xc4</span> <span class="mh">0xd6</span><span class="p">]</span>
+<span class="p">[</span><span class="mh">0x0</span> <span class="mh">0x0</span><span class="p">]</span>
+<span class="n">Sequence</span> <span class="n">lenght</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x0f</span><span class="s1">&#39;</span>
+<span class="n">Pol</span> <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">ON_</span> <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To better understand the generated file PRBS_4.usm file it was opened in an online <a class="reference external" href="https://hexed.it/">HEX editor</a>.</p>
+<figure class="align-default" id="id2">
+<img alt="_images/PRBS_4_hex_editor.png" src="_images/PRBS_4_hex_editor.png" />
+<figcaption>
+<p><span class="caption-text">PRBS_4.usm file opened in hex editor.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>On the left we srr that the file is 6 bytes long as expected. By changing the Visible Data Type in settings to 16 bit integer and moving the curser to the first entry we see on the left that the first number (first 2 bytes) is 00 0F in hexadecimal numbers or 15 in decimal numbers. This is the length of the sequence. The next two bytes C4 D6 can be entered into a <a class="reference external" href="https://www.rapidtables.com/convert/number/hex-to-binary.html">hexadecimal to binary converter</a>. This results in:</p>
+<figure class="align-default" id="id3">
+<img alt="_images/hex_to_bin_POL_signal.png" src="_images/hex_to_bin_POL_signal.png" />
+<figcaption>
+<p><span class="caption-text">Conversion of bytes 3 and 4 to binary format.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Comparing the binary number with the POL array from the Python output shows that the numbers are the same. Keep in mind that only the first 15 entries are used as the last one is only padding.</p>
+<p>The final two bytes in the PRBS_4.usm file are the binary entries of the ON# signal states. As we keep ON# LOW all the time these bytes are both 0.</p>
+</section>
+</section>
+<section id="uploading-a-usm-file-to-the-xmt-r">
+<h2>Uploading a .usm File to the XMT-R<a class="headerlink" href="#uploading-a-usm-file-to-the-xmt-r" title="Link to this heading"></a></h2>
+<p>To upload a .usm file the XMT-R must be connected via WiFi and the WEB interface to the smartphone, tablet or PC that contains the file. See section <a class="reference internal" href="web_interface.html"><span class="doc">Using the WEB Interface</span></a> for details.</p>
+</section>
+<section id="transmitting-a-user-defined-sequence">
+<h2>Transmitting a User Defined Sequence<a class="headerlink" href="#transmitting-a-user-defined-sequence" title="Link to this heading"></a></h2>
+<p>The .usm file only defines the sequence of states the XMT-R will consecutively use to control the transmitter. It needs to be combined with a base frequency to generate the desired transmitter signal. The frequency can be selected on the WEB interface.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="web_interface.html" class="btn btn-neutral float-left" title="Using the WEB Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ZONGE International.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
